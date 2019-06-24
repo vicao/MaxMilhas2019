@@ -11,6 +11,7 @@ Vagrant.configure(2) do |config|
   #end
   
   config.vm.provision "shell", inline: <<-SHELL
+    echo -e "\n--- Provisionamento iniciado ---\n";
     echo -e "\n--- Adicionando repositorio Zabbix ---\n";
     sudo apt-get install policycoreutils -y -f;
     setsebool -P httpd_can_network_connect on;
